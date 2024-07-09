@@ -6,11 +6,8 @@ from painless.models.mixins import OrganizedMixin
 class EXPERIENCE(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
-    DJANGO_ICONS = {
-        "ICONS": {
-            "edit": {"name": "fa-solid fa-pencil"},
-        },
-    }
+    icon = models.CharField(max_length=128, blank = True, null = True)
+    
     content = models.TextField(blank=True, null=True)
     datetime_year = models.IntegerField(null=False)
 

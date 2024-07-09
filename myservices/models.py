@@ -5,11 +5,8 @@ class service(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50)
     contact = models.TextField(max_length=225)
-    DJANGO_ICONS = {
-        "ICONS": {
-            "edit": {"name": "fa-solid fa-pencil"},
-        },
-    }
+    icon = models.CharField(max_length=128, blank = True, null = True)
+    
 
     class Meta:
         ordering = ['title']

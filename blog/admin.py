@@ -2,6 +2,7 @@ from django.contrib import admin
 from . models import Post, Tag
 from django.utils.html import format_html
 
+from painless.models.actions import ExportMixin, PostableMixin
 
 
 
@@ -14,15 +15,17 @@ class TagAdmin(admin.ModelAdmin):
 
 
 @admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin,PostableMixin, ExportMixin):
     list_display = ('thumbnail','title',
                      'published_at', 'status', 'viewers', 'created', 'updated','is_published')
     def thumbnail(self, object):
         if object.banner:
             return format_html('<img src="{}" width="40" style="border-radius:50%;">'.format(object.banner.url))
     list_filter = ('status', 'updated')
+    list_display_links = ['title']
     search_fields = ('title', 'content')
     list_editable = ['viewers']
+    actions = ['make_published', 'make_draft', 'export_as_json', 'export_as_csv']
     fieldsets = [
         ('main', { 
             'fields': ( 
