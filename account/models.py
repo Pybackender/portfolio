@@ -81,4 +81,4 @@ class User(AbstractUser):
 
     @property
     def get_avatar(self):
-        return self.avatar.url if self.avatar else static('../static/assets/backend/img/team/profile-picture-1.jpg')
+        return self.avatar.url if self.avatar else static('../static/assets/img/profile-picture-1.jpg')

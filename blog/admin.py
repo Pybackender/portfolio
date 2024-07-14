@@ -22,7 +22,7 @@ class PostAdmin(admin.ModelAdmin,PostableMixin, ExportMixin):
         if object.banner:
             return format_html('<img src="{}" width="40" style="border-radius:50%;">'.format(object.banner.url))
     list_filter = ('status', 'updated')
-    list_display_links = ['title']
+    list_display_links = ['title','thumbnail']
     search_fields = ('title', 'content')
     list_editable = ['viewers']
     actions = ['make_published', 'make_draft', 'export_as_json', 'export_as_csv']
