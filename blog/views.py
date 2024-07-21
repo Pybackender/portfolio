@@ -11,7 +11,8 @@ services = get_user_model()
 
 def blogView(request):
     users = User.objects.get(id=1)
-    myservices = services.objects.all()
+    myservices = service.objects.all()
+    print(myservices,111111111111111111111111)
     context = {
         users:"users",
         myservices:"myservises"
