@@ -1,7 +1,7 @@
-<script src="js/jquery.min.js"></script>
-
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+{% load static %}
+<script src="{% static 'assets/web/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/web/js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/web/js/easing.js' %}"></script>
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		

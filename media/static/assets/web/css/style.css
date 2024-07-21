@@ -471,9 +471,10 @@ span.border.one:after {
 	-ms-border-radius:1.5em;
 }
 .about-right{
-	    float: left;
+	float: left;
 	padding:0;
-	background:url(../images/about-pic.jpg) no-repeat 0px 0px;
+	/* background:url(../images/about-pic.png) no-repeat 0px 0px; */
+	/* background:url(../../img/no_image.png) no-repeat 0px 0px; */
 	min-height:580px;
 	background-size: cover;
    -o-background-size: cover;

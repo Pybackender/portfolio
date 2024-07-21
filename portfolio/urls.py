@@ -3,14 +3,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-
-from Experience.views import experienceView
 from blog.views import blogView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', experienceView, name = "experience" ),
-    path('', blogView, name = "post" )
+    path('', blogView, name = "post" ),
 
 ]
 
