@@ -10,11 +10,13 @@ services = get_user_model()
 
 
 def blogView(request):
-    users = User.objects.get(id=1)
+    user = User.objects.get(id=1)
+    # list_users = User.objects.all()
     myservices = service.objects.all()
-    print(myservices,111111111111111111111111)
+
     context = {
-        users:"users",
-        myservices:"myservises"
+        # 'list_users': list_users,
+        'user': user,
+        'myservices': myservices
     }
     return render(request, 'landing/base.html', context)

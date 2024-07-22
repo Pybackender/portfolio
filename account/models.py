@@ -51,7 +51,7 @@ class IPAddress(models.Model):
 
 
 class User(AbstractUser):
-    username = None
+    username = models.CharField(max_length=225)
     email = models.EmailField(unique=True, validators=[validate_email])
     mobile = models.CharField(max_length=12, validators=[
                               validate_phone_number])
