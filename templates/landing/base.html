@@ -190,6 +190,7 @@
 					</div>
 					<!-- services-grids -->
 					<div class="wthree_about_right_grids w3l-agile">
+						{% for i in myservices %}
 				<div class="col-md-6 wthree_about_right_grid">
 					<div class="col-xs-4 wthree_about_right_grid_left">
 						<div class="hvr-rectangle-in">
@@ -197,11 +198,12 @@
 						</div>
 					</div>
 					<div class="col-xs-8 wthree_about_right_grid_right">
-						<h4>Web Design</h4>
+						<h4>Web Design{{ i }}</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
+				{% endfor %}
 				<div class="col-md-6 wthree_about_right_grid">
 					<div class="col-xs-4 wthree_about_right_grid_left">
 						<div class="hvr-rectangle-in">
