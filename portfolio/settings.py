@@ -17,7 +17,8 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'Experience',
     'myservices',
-    'account'
+    'account',
+    'myport'
     
 ]
 

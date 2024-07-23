@@ -1,0 +1,41 @@
+{% load static %}
+<!--work-experience-->
+<div id="work" class="work">
+    <div class="container">
+        <div class="service-head text-center">
+            <h4>WHAT I DID</h4>
+            <h3>MY <span>EXPERIENCE</span></h3>
+            <span class="border one"></span>
+        </div>
+        {% for experience in experiences %}
+        <div class="time-main w3l-agile">
+            <div class="col-md-6 year-info">
+                <ul class="year">
+                    <li>{{ experience.datetime_year }}</li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+            {% endfor %}
+            
+            <ul class="col-md-6 timeline">
+                {% for exp in experiences %}
+                <li>
+                    <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">{{ exp.title }}</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>{{ exp.content}}</p>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            
+            <div class="clearfix"></div>
+        </div>
+        
+    </div>
+</div>
+<!--//work-experience-->
