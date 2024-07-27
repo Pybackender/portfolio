@@ -8,7 +8,7 @@ class EXPERIENCE(models.Model):
     slug = models.SlugField(max_length=100)
     icon = models.CharField(max_length=128, blank = True, null = True)
     
-    content = models.TextField(blank=True, null=True)
+    content = models.TextField(max_length=225,blank=True, null=True)
     datetime_year = models.IntegerField(null=False)
 
     class Meta:

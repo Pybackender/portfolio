@@ -10,6 +10,8 @@ class Contact(TimeStampedMixin):
                               validators=[validate_email])
     mobile_number = models.IntegerField()
     message = models.TextField()
+    fax = models.IntegerField(null=True,blank=True)
+    Address = models.CharField(max_length=225) 
 
     class Meta:
         ordering = ['-created']

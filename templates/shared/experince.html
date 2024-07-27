@@ -15,27 +15,25 @@
                     <div class="clearfix"></div>
                 </ul>
             </div>
-            {% endfor %}
-            
+
             <ul class="col-md-6 timeline">
-                {% for exp in experiences %}
                 <li>
                     <div class="timeline-badge info"><i class="glyphicon glyphicon-briefcase"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">{{ exp.title }}</h4>
+                            <h4 class="timeline-title">{{ experience.title }}</h4>
                         </div>
                         <div class="timeline-body">
-                            <p>{{ exp.content}}</p>
+                            <p> {{ experience.content|linebreaks }} </p>
                         </div>
                     </div>
                 </li>
-                {% endfor %}
             </ul>
-            
+
             <div class="clearfix"></div>
         </div>
-        
+        {% endfor %}
+
     </div>
 </div>
 <!--//work-experience-->

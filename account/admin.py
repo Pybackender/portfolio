@@ -3,15 +3,19 @@ from .models import User, IPAddress
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
+from ckeditor.widgets import CKEditorWidget
+from django import forms
+
 
 from .actions import make_active, make_deactive
 
 admin.site.register(IPAddress)
 @admin.register(User)
-class UserAdmin(DjangoUserAdmin):
+class UserAdmin(DjangoUserAdmin, forms.ModelForm):
+    content = forms.CharField(widget=CKEditorWidget())
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        (_('Personal info'), {'fields': ('mobile','username', 'first_name', 'last_name', 'address','title','about','linkedin','whatsapp','instagram')}),
+        (_('Personal info'), {'fields': ('mobile','username', 'first_name', 'last_name', 'address','title','position','about','linkedin','github','instagram')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
