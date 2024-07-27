@@ -8,8 +8,6 @@ from blog.views import blogView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blogView, name = "post" ),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-
 
 ]
 

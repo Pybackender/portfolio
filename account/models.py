@@ -3,8 +3,6 @@ from django.core.validators import validate_email
 from django.db import models
 from django.templatetags.static import static
 from painless.models.validations import validate_phone_number
-from ckeditor.fields import RichTextField,CKEditorWidget
-
 class UserManager(BaseUserManager):
     use_in_migrations = True
 
@@ -61,8 +59,7 @@ class User(AbstractUser):
         upload_to="avatar/%Y/%m/%d", null=True, blank=True)
     title = models.CharField(max_length=100, null=True, blank=True)
     position = models.CharField(max_length=225)
-    about = RichTextField()
-    widget = CKEditorWidget()
+    about = models.CharField(max_length=225)
     instagram = models.URLField(blank=True, null=True)
     github = models.URLField(blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)
