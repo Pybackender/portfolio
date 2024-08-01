@@ -74,13 +74,13 @@
 							<li>
 								<ul class="address-text">
 									<li><b>GITHUB </b></li>
-									<li><a href="{{ user.github }}">my github</a></li>
+									<li><a href="{{ user.github }}">Pybackender</a></li>
 								</ul>
 							</li>
 							<li>
 								<ul class="address-text">
 									<li><b>INSTAGRAM </b></li>
-									<li><a href="{{ user.instagram }}">my instagram</a></li>
+									<li><a href="{{ user.instagram }}">hsn_Pybackender</a></li>
 								</ul>
 							</li>
 							<li>
@@ -99,7 +99,7 @@
 						</ul>
 					</div>
 					<div class="col-md-5 header-left">
-						<img src="{% static 'assets/img/no_image.png' %}" alt="">
+						<img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}" alt="">
 					</div>
 					<div class="clearfix"> </div>
 
@@ -115,218 +115,6 @@
 {% include 'shared/contact.html' %}
 	<!-- //footer -->
 	<!-- /container -->
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal1" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<h3>Image-Title</h3>
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type specimen book.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal2" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<h3>Image-Title</h3>
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type specimen book.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal3" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<h3>Image-Title</h3>
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type specimen book.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal4" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<h3>Image-Title</h3>
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type specimen book.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal5" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<h3>Image-Title</h3>
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type specimen book.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal6" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<h3>Image-Title</h3>
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type specimen book.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal7" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<h3>Image-Title</h3>
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type specimen book.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal8" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<h3>Image-Title</h3>
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-								has been the industry's standard dummy text ever since the 1500s, when an unknown
-								printer took a galley of type and scrambled it to make a type specimen book.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="portfolio-modal modal fade slideanim" id="portfolioModal9" tabindex="-1" role="dialog"
-		aria-hidden="true">
-		<div class="modal-content port-modal">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<div class="modal-body">
-							<img src="{% static 'assets/img/no_image.png' %}" class="img-responsive img-centered"
-								alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	{% include 'partials/_foojs.html' %}
 

@@ -16,6 +16,8 @@
 			</div>
 		</div>
 		<div class="col-md-6 about-right">
+			<img src="{% if user.image %}{{ user.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}" alt="">
+
 		</div>
 		<div class="clearfix"> </div>
 		<link href="{% static 'assets/web/css/owl.carousel.css' %}" rel="stylesheet">

@@ -5,6 +5,7 @@ class Port(models.Model):
     slug = models.SlugField(max_length=50)
     image = models.ImageField(null=True, blank=True)
     link = models.CharField(max_length=225,null=True, blank=True)
+    content = models.CharField(max_length=225,null=True, blank=True)
 
 
 class Meta:

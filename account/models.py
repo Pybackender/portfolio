@@ -57,6 +57,7 @@ class User(AbstractUser):
     ################################################################
     avatar = models.ImageField(
         upload_to="avatar/%Y/%m/%d", null=True, blank=True)
+    image = models.ImageField( null=True, blank=True)
     title = models.CharField(max_length=100, null=True, blank=True)
     position = models.CharField(max_length=225)
     about = models.CharField(max_length=225)

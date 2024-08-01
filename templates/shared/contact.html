@@ -14,8 +14,8 @@
                         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
                         <h4>Contact By Email</h4>
                         <ul>
-                            <li>Mail1: <a href="mailto:info@example.com">{{ contact.email }}</a></li>
-                            <li>Mail2: <a href="mailto:info@example.com">info@gmail.com</a></li>
+                            <li>Mail1: <a href="backender.py@gmail.com">{{ user.email }}</a></li>
+                            <li>Mail2: <a href="backender.py@gmail.com">info@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -24,8 +24,7 @@
                         <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
                         <h4>Contact By Phone</h4>
                         <ul>
-                            <li>+98{{ contact.mobile_number }}</li>
-                            <li> Fax :{{ contact.fax }}</li>
+                            <li>+98{{ user.mobile }}</li>
                         </ul>
                     </div>
                 </div>
@@ -34,32 +33,37 @@
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                         <h4>Looking For Address</h4>
                         <ul>
-                            <li> Address :{{ contact.Address }}</li>
-                            <li>Iran, Babol.</li>
+                            <li> Address :{{ user.address }}</li>
+                            <li></li>
                         </ul>
                     </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
             <div class="col-md-6 mail_right">
-                <form action="#" method="post">
-                    <input type="text" name="Name" value="Name" onfocus="this.value = '';"
+                <form  method="post">
+                    <input type="text" name="name" value="Name" onfocus="this.value = '';"
                     onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                    <input type="email" name="Email" value="Email" onfocus="this.value = '';"
+                    <input type="email" name="email" value="Email" onfocus="this.value = '';"
                     onblur="if (this.value == '') {this.value = 'Email';}" required="">
-                    <input type="text" name="Mobile number" value="Mobile number" onfocus="this.value = '';"
+                    <input type="text" name="mobile_number" value="Mobile number" onfocus="this.value = '';"
                         onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
-                    <textarea name="Message..." onfocus="this.value = '';"
-                    onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
+                    <textarea name="message" onfocus="this.value = '';"
+                    onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea> 
+                    {% csrf_token %}
                     <input type="submit" value="Send">
-                    
                 </form>
+                <!-- <form method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                </form> -->
+                
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="copy_right text-center">
-            <p>&copy; 2016 Preface . All rights reserved | Design by <a href="http://w3layouts.com/"
-                target="_blank">W3layouts.</a></p>
+            <p>&copy; 2024 Preface . All rights reserved | Design by <a href="https://github.com/Pybackender"
+                target="_blank">pybackender.</a></p>
                 <ul class="social-icons two">
                     <li><a href="#"> </a></li>
                     <li><a href="#" class="fb"> </a></li>

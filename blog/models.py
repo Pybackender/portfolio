@@ -20,7 +20,7 @@ class Post(OrganizedMixin):
     tags = models.ManyToManyField(Tag, related_name = 'tags',  blank = True)
     content = models.TextField(blank=True,null=True)
     viewers = models.PositiveIntegerField(default=0)
-    
+    likes = models.PositiveIntegerField(default=0)
 
     class Meta:
         ordering = ['-published_at', 'title']
