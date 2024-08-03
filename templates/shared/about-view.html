@@ -16,8 +16,11 @@
 			</div>
 		</div>
 		<div class="col-md-6 about-right">
-			<img src="{% if user.image %}{{ user.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}" alt="">
-
+			{% if user.image %}
+			<img src="{{ user.image.url }}" alt="">
+			{% else %}
+			<img src="{% static 'assets/img/no_image.png' %}" alt="" srcset="">
+			{% endif %}
 		</div>
 		<div class="clearfix"> </div>
 		<link href="{% static 'assets/web/css/owl.carousel.css' %}" rel="stylesheet">

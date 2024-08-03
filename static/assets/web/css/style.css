@@ -473,7 +473,7 @@ span.border.one:after {
 .about-right{
 	float: left;
 	padding:0;
-	background:url(../images/about-pic.jpg) no-repeat 0px 0px;
+	background:url(../images/about-pic.png) no-repeat 0px 0px;
 	min-height:580px;
 	background-size: cover;
    -o-background-size: cover;
@@ -1979,4 +1979,10 @@ span.border.two:after {
 		margin-top: -62px;
 		padding: 6px 0;
 	}
+}
+
+ul.messagelist li.alert-success{
+	list-style-type: none;
+	height : 50px;
+
 }

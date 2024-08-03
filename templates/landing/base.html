@@ -27,7 +27,7 @@
 							<h1><a href="index.html"><span>W</span>elcome</a></h1>
 						</div>
 						<div class="navigation-right">
-							<span class="menu"><img src="{% static 'assets/img/no_image.png' %}" alt=" " /></span>
+							<span class="menu"><img src="{% if user.avatar %}{{ user.avatar.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}" alt=" " /></span>
 							<nav class="link-effect-3" id="link-effect-3">
 								<ul class="nav1 nav nav-wil">
 									<li class="active"><a data-hover="Home" href="index.html">Home</a></li>

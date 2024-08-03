@@ -40,36 +40,45 @@
                 </div>
                 <div class="clearfix"> </div>
             </div>
+
             <div class="col-md-6 mail_right">
-                <form  method="post">
+                {% block messages %}
+                {% if messages %}
+                <ul class="messagelist">{% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message|capfirst }}</li>
+                        {% endfor %}
+                </ul>
+                {% endif %}
+                {% endblock messages %}
+                <!-- <form method="post">
                     <input type="text" name="name" value="Name" onfocus="this.value = '';"
-                    onblur="if (this.value == '') {this.value = 'Name';}" required="">
+                        onblur="if (this.value == '') {this.value = 'Name';}" required="">
                     <input type="email" name="email" value="Email" onfocus="this.value = '';"
-                    onblur="if (this.value == '') {this.value = 'Email';}" required="">
+                        onblur="if (this.value == '') {this.value = 'Email';}" required="">
                     <input type="text" name="mobile_number" value="Mobile number" onfocus="this.value = '';"
                         onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
                     <textarea name="message" onfocus="this.value = '';"
-                    onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea> 
+                        onblur="if (this.value == '') {this.value = 'Message...';}" required="">Message...</textarea>
                     {% csrf_token %}
-                    <input type="submit" value="Send">
-                </form>
-                <!-- <form method="post">
+                </form> -->
+                <form method="post">
                     {% csrf_token %}
                     {{ form }}
-                </form> -->
-                
+                    <input type="submit" value="Send">
+                </form>
+
             </div>
             <div class="clearfix"></div>
         </div>
         <div class="copy_right text-center">
             <p>&copy; 2024 Preface . All rights reserved | Design by <a href="https://github.com/Pybackender"
-                target="_blank">pybackender.</a></p>
-                <ul class="social-icons two">
-                    <li><a href="#"> </a></li>
-                    <li><a href="#" class="fb"> </a></li>
-                    <li><a href="#" class="in"> </a></li>
-                    <li><a href="#" class="dott"> </a></li>
-                </ul>
-            </div>
+                    target="_blank">pybackender.</a></p>
+            <ul class="social-icons two">
+                <li><a href="#"> </a></li>
+                <li><a href="#" class="fb"> </a></li>
+                <li><a href="#" class="in"> </a></li>
+                <li><a href="#" class="dott"> </a></li>
+            </ul>
         </div>
     </div>
+</div>

@@ -1980,3 +1980,9 @@ span.border.two:after {
 		padding: 6px 0;
 	}
 }
+
+ul.messagelist li.alert-success{
+	list-style-type: none;
+	height : 50px;
+
+}

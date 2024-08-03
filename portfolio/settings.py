@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from django.contrib import messages
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f^7)6mk^kur2t46qcbkgtf_l^$6c4d4i(%s@@1q0wz%(_y-fdx'
@@ -19,7 +20,7 @@ INSTALLED_APPS = [
     'myservices',
     'account',
     'myport',
-    
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -30,6 +31,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'account.middleware.SaveIPAddressMiddleware'
+
 ]
 
 ROOT_URLCONF = 'portfolio.urls'
@@ -113,3 +117,21 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'backender.py@gmail.com'  # Corrected the email address
 EMAIL_HOST_PASSWORD = 'pxzx raqr ftdh vbws'
+
+
+MESSAGE_TAGS = {
+        messages.DEBUG: 'alert-secondary',
+        messages.INFO: 'alert-info',
+        messages.SUCCESS: 'alert-success',
+        messages.WARNING: 'alert-warning',
+        messages.ERROR: 'alert-error',
+ }
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
+
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
