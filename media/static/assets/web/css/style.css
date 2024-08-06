@@ -205,54 +205,31 @@ ul.address-text b {
     color:#fff;
 }
 /*--social-icons--*/
-ul.social-icons{
-	    display: block;
-    padding: 0;
-    background:#00a78e;
-    padding:1.3em 0;
-    text-align: center;
-	margin:0;
+ul.social-backender {
+    list-style-type: none;
 }
-.social-icons li {
+
+ul.social-backender li {
     display: inline-block;
-    margin-right: 1%;
+    margin: 30px;
 }
-.social-icons li a{  
-    background: url(../images/social-icons2.png) no-repeat 3px 3px;
-    display: block;
-    height: 32px;
-    width: 32px;
-	margin-right: 1em;
-	-webkit-transition: .5s all;
-    transition: .5s all;
-    -moz-transition: .5s all;
+
+ul.social-backender a {
+    color: white;
+    border-radius: 50%;
+    outline: 1px solid #00a78e;
+    outline-offset: 10px;
+    transition: background-color 0.3s, transform 0.3s; /* Added transition for smooth effect */
 }
-.social-icons li a:before {
-	content: '';
-    display: block;
-    height: 32px;
-    width: 32px;
-       border: 2px solid #fff;
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	-ms-transform: rotate(45deg); 
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);	
-}
-.social-icons li a.fb{
-	background-position: 3px -30px;
-}
-.social-icons li a.in{
-      background-position: 3px -62px;
-}
-.social-icons li a.dott {
-background-position: 3px -94px;
-}
-.social-icons li a:hover::before {
+
+ul.social-backender li a:hover {
+    text-decoration: none;
+    outline: 1px solid white;
     border-color: #00a78e;
-	    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgba(0, 167, 142, 0.5); /* Change background on hover */
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
 }
+
 /*-- wellcome-note --*/
 .welcome-note{
 	margin:3em 0;
@@ -473,7 +450,7 @@ span.border.one:after {
 .about-right{
 	float: left;
 	padding:0;
-	background:url(../images/about-pic.png) no-repeat 0px 0px;
+	background:url(../../img/no_image.png) no-repeat 0px 0px;
 	min-height:580px;
 	background-size: cover;
    -o-background-size: cover;
@@ -1986,3 +1963,4 @@ ul.messagelist li.alert-success{
 	height : 50px;
 
 }
+

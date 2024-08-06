@@ -17,7 +17,7 @@ class TagAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin,PostableMixin, ExportMixin):
     list_display = ('thumbnail','title',
-                     'published_at', 'status', 'viewers','likes', 'created', 'updated','is_published')
+                     'published_at', 'status', 'viewers', 'created', 'updated','is_published')
     def thumbnail(self, object):
         if object.banner:
             return format_html('<img src="{}" width="40" style="border-radius:50%;">'.format(object.banner.url))

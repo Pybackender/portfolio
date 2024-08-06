@@ -1,4 +1,5 @@
 from django import forms
+from blog.models import Post
 from contact.models import Contact
 
 
@@ -20,3 +21,8 @@ class ContactForm(forms.ModelForm):
         if len(data) < 1:
             raise forms.ValidationError("طول متن نباید کمتر از ۵ حرف باشد")
         return data
+
+class PostForm(forms.Form):
+    class Meta:
+        model = Post
+        fields = ['likes']

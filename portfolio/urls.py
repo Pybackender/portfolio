@@ -9,6 +9,7 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blogView, name = "post" ),
+    # post('post/<int:uid>/like/', bloglike, name="like")
 
 ] +  debug_toolbar_urls()
 

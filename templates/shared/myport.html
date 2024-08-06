@@ -12,8 +12,8 @@
         <script type="text/javascript">
             $(document).ready(function () {
                 $('#horizontalTab').easyResponsiveTabs({
-                    type: 'default', //Types: default, vertical, accordion           
-                    width: 'auto', //auto or any width like 600px
+                    type: 'default', // Types: default, vertical, accordion           
+                    width: 'auto', // auto or any width like 600px
                     fit: true   // 100% fit in a container
                 });
             });
@@ -22,21 +22,28 @@
             <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
                 <ul class="resp-tabs-list">
                     <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>ALL</span></li>
-                    <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>WEB DESIGN</span></li>
-                    <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>MOBILE UI</span></li>
-                    <li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span>ILLUSTRATIONS</span></li>
+
+                    {% for j in myport2 %}
+                    <li class="resp-tab-item" aria-controls="tab_item-{{ forloop.counter }}" role="tab">
+                        <span>{{ j.title }}</span>
+                    </li>
+                    {% endfor %}
                 </ul>
                 <div class="resp-tabs-container">
-                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                    <!-- ALL Tab -->
+                    <div class="tab-0 resp-tab-content" aria-labelledby="tab_item-0">
                         {% for i in myport %}
                         <div class="col-md-3 team-gd">
-                            <a href="#portfolioModal{{ forloop.counter }}" class="portfolio-link b-link-diagonal b-animate-go" data-toggle="modal">
-                                <img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}" alt="">
+                            <a href="#portfolioModal{{ forloop.counter }}"
+                                class="portfolio-link b-link-diagonal b-animate-go" data-toggle="modal">
+                                <img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}"
+                                    alt="">
                             </a>
                         </div>
 
                         <!-- Modal for each portfolio item -->
-                        <div class="portfolio-modal modal fade slideanim" id="portfolioModal{{ forloop.counter }}" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="portfolio-modal modal fade slideanim" id="portfolioModal{{ forloop.counter }}"
+                            tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-content port-modal">
                                 <div class="close-modal" data-dismiss="modal">
                                     <div class="lr">
@@ -48,19 +55,63 @@
                                         <div class="col-lg-8 col-lg-offset-2 text-center">
                                             <div class="modal-body">
                                                 <h3>{{ i.slug }}</h3> <!-- Assuming slug is the title -->
-                                                <img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}" class="img-responsive img-centered" alt="">
-                                                <p>{{ i.content }}</p> <!-- Assuming description is a field in your model -->
+                                                <img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}"
+                                                    class="img-responsive img-centered" alt="">
+                                                <p>{{ i.content }}</p>
+                                                <!-- Assuming description is a field in your model -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                         {% endfor %}
                         <div class="clearfix"></div>
                     </div>
-                    <!-- Add similar tab content for other categories as needed -->
+
+                    <!-- Category Tabs -->
+                    {% for j in myport2 %}
+                    <div class="tab-{{ forloop.counter }} resp-tab-content"
+                        aria-labelledby="tab_item-{{ forloop.counter }}">
+                        {% for i in myport %}
+                        {% if i.category == j %} <!-- Assuming 'category' is a field in your model -->
+                        <div class="col-md-3 team-gd">
+                            <a href="#portfolioModal{{ forloop.counter }}"
+                                class="portfolio-link b-link-diagonal b-animate-go" data-toggle="modal">
+                                <img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}"
+                                    alt="">
+                            </a>
+                        </div>
+
+                        <!-- Modal for each portfolio item -->
+                        <div class="portfolio-modal modal fade slideanim" id="portfolioModal{{ forloop.counter }}"
+                            tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-content port-modal">
+                                <div class="close-modal" data-dismiss="modal">
+                                    <div class="lr">
+                                        <div class="rl"></div>
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-8 col-lg-offset-2 text-center">
+                                            <div class="modal-body">
+                                                <h3>{{ i.slug }}</h3> <!-- Assuming slug is the title -->
+                                                <img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}"
+                                                    class="img-responsive img-centered" alt="">
+                                                <p>{{ i.content }}</p>
+                                                <!-- Assuming description is a field in your model -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <div class="clearfix"></div>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

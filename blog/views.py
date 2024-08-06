@@ -1,11 +1,11 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import get_user_model
-from blog.forms import ContactForm
+from blog.forms import ContactForm, PostForm
 from blog.models import Post, Tag
 from myservices.models import service
 from Experience.models import EXPERIENCE
-from myport.models import Port
+from myport.models import Category, Port
 from contact.models import Contact
 from django.core.mail import send_mail
 from django.contrib import messages
@@ -17,6 +17,7 @@ def blogView(request):
     myservices = service.objects.all()
     experiences = EXPERIENCE.objects.all()
     myport = Port.objects.all()
+    myport2 = Category.objects.all()
     contact = Contact.objects.all()
     blog = Post.objects.prefetch_related("tags").all()
     
@@ -36,6 +37,8 @@ def blogView(request):
     
 
     if request.method == "POST":
+        # formlike = PostForm(request.POST)
+        # print(formlike)
         form = ContactForm(request.POST)
         if form.is_valid():
             # Save the form data to the database
@@ -75,6 +78,7 @@ def blogView(request):
         'myservices': myservices,
         'experiences': experiences,
         'myport': myport,
+        'myport2': myport2,
         'contact': contact,
         'form': form,
         'blog': blog,
