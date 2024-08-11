@@ -32,6 +32,7 @@ class PostAdmin(admin.ModelAdmin,PostableMixin, ExportMixin):
                     ('title',), 
                     ('author', 'status', ),
                     ( 'viewers'),
+                    
                 ),
             }                    
         ),

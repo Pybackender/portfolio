@@ -58,6 +58,9 @@
                                                 <img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}"
                                                     class="img-responsive img-centered" alt="">
                                                 <p>{{ i.content }}</p>
+                                                {% if i.link %} <!-- Check if link is not null -->
+                                                <a href="{{ i.link }}">Go to this site</a>
+                                                {% endif %}
                                                 <!-- Assuming description is a field in your model -->
                                             </div>
                                         </div>
@@ -100,6 +103,9 @@
                                                 <img src="{% if i.image %}{{ i.image.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}"
                                                     class="img-responsive img-centered" alt="">
                                                 <p>{{ i.content }}</p>
+                                                {% if i.link %} <!-- Check if link is not null -->
+                                                <a href="{{ i.link }}">Go to this site</a>
+                                                {% endif %}
                                                 <!-- Assuming description is a field in your model -->
                                             </div>
                                         </div>

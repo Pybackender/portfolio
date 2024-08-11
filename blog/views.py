@@ -13,9 +13,9 @@ from django.contrib import messages
 User = get_user_model()
 
 def blogView(request):
-    user = get_object_or_404(User, id=1)
+    user = get_object_or_404(User)
     myservices = service.objects.all()
-    experiences = EXPERIENCE.objects.all()
+    experiences = EXPERIENCE.objects.all().order_by('-datetime_year')
     myport = Port.objects.all()
     myport2 = Category.objects.all()
     contact = Contact.objects.all()

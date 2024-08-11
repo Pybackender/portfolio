@@ -15,7 +15,6 @@
                         <h4>Contact By Email</h4>
                         <ul>
                             <li>Mail1: <a href="backender.py@gmail.com">{{ user.email }}</a></li>
-                            <li>Mail2: <a href="backender.py@gmail.com">info@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -74,10 +73,10 @@
             <p>&copy; 2024 Preface . All rights reserved | Design by <a href="{{ user.github }}"
                     target="_blank">pybackender.</a></p>
                     <ul class="social-backender">
-                        <li><a href="#" class="fas fa-envelope" title="Email"></a></li>
-                        <li><a href="#" class="fab fa-instagram" title="Instagram"></a></li>
-                        <li><a href="#" class="fab fa-facebook" title="Facebook"></a></li>
-                        <li><a href="#" class="fab fa-linkedin" title="LinkedIn"></a></li> <!-- Corrected 'linkdin' to 'linkedin' -->
+                        <li><a href="/#contact" class="fas fa-envelope" title="Email"></a></li>
+                        <li><a href="{{ user.instagram }}" class="fab fa-instagram" title="Instagram"></a></li>
+                        <li><a href="{{ user.github }}" class="fab fa-github" title="Github"></a></li>
+                        <li><a href="{{ user.linkedin }}" class="fab fa-linkedin" title="LinkedIn"></a></li> <!-- Corrected 'linkdin' to 'linkedin' -->
                     </ul>
                     
         </div>

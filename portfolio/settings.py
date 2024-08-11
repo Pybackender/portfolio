@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'myservices',
     'account',
     'myport',
-    'debug_toolbar'
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [

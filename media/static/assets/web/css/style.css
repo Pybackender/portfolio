@@ -9,6 +9,9 @@ html, body{
     font-size: 100%;
   	background: #FFf;
 }
+div.hvr-rectangle-in {
+	line-height: 4.5;
+}
 body a{
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
@@ -21,7 +24,7 @@ body h1,h2,h3,h4,h5,h6{
 }
 /*-- header --*/
 #home {
-    background: url(../images/header-bg.jpg) no-repeat center top;
+    background: url(../../img/background-image5.jpg) no-repeat center top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -576,6 +579,8 @@ span.border.one:after {
   transition-timing-function: ease-out;
       border-radius: 50%;
 }
+
+
 .hvr-rectangle-in:hover, .hvr-rectangle-in:focus, .hvr-rectangle-in:active {
   color: white;
 }
@@ -1959,8 +1964,32 @@ span.border.two:after {
 }
 
 ul.messagelist li.alert-success{
-	list-style-type: none;
-	height : 50px;
+	height : 20px;
 
 }
 
+/* General link styles */
+a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect */
+a:hover {
+    color: #0056b3; /* Darker shade for hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Link in modal */
+.portfolio-modal a {
+    font-weight: bold; /* Make link bold */
+    font-size: 1.1em; /* Slightly increase font size */
+    margin-top: 15px; /* Space above the link */
+    display: inline-block; /* Make it block for better spacing */
+}
+
+/* Active link (if needed) */
+a:active {
+    color: #003d80; /* Even darker shade for active state */
+}

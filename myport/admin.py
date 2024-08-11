@@ -3,7 +3,7 @@ from .models import  Category, Port
 
 @admin.register(Port)
 class Portadmin(admin.ModelAdmin):
-    list_display = ['image', 'name']
+    list_display = [ 'name','category','image',]
     prepopulated_fields = {'name': ('image',)}
     
 @admin.register(Category)

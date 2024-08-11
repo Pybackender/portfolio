@@ -60,7 +60,7 @@ class User(AbstractUser):
     image = models.ImageField( null=True, blank=True)
     title = models.CharField(max_length=100, null=True, blank=True)
     position = models.CharField(max_length=225)
-    about = models.CharField(max_length=225)
+    about = models.CharField(max_length=500)
     instagram = models.URLField(blank=True, null=True)
     github = models.URLField(blank=True, null=True)
     linkedin = models.URLField(blank=True, null=True)

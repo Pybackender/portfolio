@@ -20,10 +20,9 @@ class Category(models.Model):
 
 class Port(models.Model):
     name = models.SlugField(max_length=50)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True,upload_to='myport/%Y/%m/%d')
     link = models.CharField(max_length=225, null=True, blank=True)
     content = models.CharField(max_length=225, null=True, blank=True)
-    # category = models.ForeignKey(case)
     category = models.ForeignKey(Category,
                                  related_name='Ports',
                                  on_delete=models.CASCADE)
